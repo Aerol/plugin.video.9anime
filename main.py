@@ -71,8 +71,6 @@ def get_episodes(url, iconimage):
     print "get_episodes called"
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
-    with open('/home/aerol/episodespage', 'w') as f:
-        f.write(soup.prettify().encode('utf-8'))
     temp = soup.find_all('div')
     for i in temp:
         try:
