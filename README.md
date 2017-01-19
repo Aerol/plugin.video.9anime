@@ -18,4 +18,7 @@ Download support
 Settings
 
 
-> Donate via Bitcoin : 14VFMniwVWAQ6jRQEQX6BKg8AiMtiTpYKm
+Donate
+========
+
+> Bitcoin : 14VFMniwVWAQ6jRQEQX6BKg8AiMtiTpYKm
