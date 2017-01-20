@@ -82,7 +82,7 @@ def get_anime_list(url, iconimage):
             pass
 
 def get_episodes(url, iconimage):
-    print "get_episodes called"
+    print("get_episodes called")
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
     temp = soup.find_all('div')
@@ -94,21 +94,21 @@ def get_episodes(url, iconimage):
         except:
             pass
     for i in eps:
-        print _domain_url+i.get('data-id')
+        print(_domain_url+i.get('data-id'))
         addDir("Episode "+i.get('data-base'), i.get('data-id'), 98, iconimage, iconimage)
 
 def get_video_links(name, url, iconimage):
-    print name
-    print url
-    print iconimage
+    print(name)
+    print(url)
+    print(iconimage)
     vid_info = simplejson.loads(open_url('https://9anime.to/ajax/episode/info?id='+url+"&update=0"))
-    print vid_info
+    print(vid_info)
     vid_id = vid_info['params']['id']
     token = vid_info['params']['token']
     options = vid_info['params']['options']
     base_grabber = 'https://9anime.to/grabber-api/?id='+vid_id+'&token='+token+'&options='+options
     video_links = simplejson.loads(open_url(base_grabber))
-    print video_links
+    print(video_links)
     for i in video_links['data']:
         addLink(i['label'], i['file'], 97, iconimage, iconimage)
 
@@ -160,7 +160,7 @@ def get_playlink(name, url, iconimage):
     PLAYLINK(name, url, iconimage)
 
 def open_url(url):
-    print "opening url "+url
+    print("opening url "+url)
     net.set_cookies(cookie_file)
     link = net.http_GET(url).content
     #link = cleanHex(link)
@@ -215,34 +215,27 @@ if __name__ == '__main__':
     except:
         pass
 
-    print type(mode)
+    print(type(mode))
 
     if mode is None or url is None or len(url) < 1:
         main()
     elif mode is 1:
-        print "entered mode 1"
         get_genres(url, iconimage)
     elif mode is 2:
-        print "entered mode 2"
         get_newest(url, mode, iconimage)
     elif mode is 3:
-        print "entered mode 3, executing get_most_watched("+url+")"
         get_most_watched(url, iconimage)
     elif mode is 4:
         search(url)
     elif mode is 97:
         get_playlink(name, url, iconimage)
     elif mode is 98:
-        print "entered mode 98, executing get_video_links("+url+")"
         get_video_links(name, url, iconimage)
     elif mode is 99:
-        print "entered mode 99, executing get_episodes("+url+")"
         get_episodes(url, iconimage)
     elif mode is 100:
-        print "entered mode 100"
         get_play_link(name, url, iconimage)
     elif 'str' in str(type(mode)):
-        print 'assuming mode is genre'
         get_genre(url, mode, iconimage)
 
     xbmcplugin.endOfDirectory(int(sys.argv [1]))
