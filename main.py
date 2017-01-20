@@ -28,16 +28,24 @@ file_var = open(xbmc.translatePath(os.path.join(datapath, 'cookie.lwp')), "a")
 cookie_file = os.path.join(os.path.join(datapath,''), 'cookie.lwp')
 
 def get_genres(url, iconimage):
-        genres = ['action', 'adventure', 'cars', 'comedy', 'dementia', 'demons',
-                          'drama', 'ecchi', 'fantasy', 'game', 'harem', 'historical',
-                          'horror', 'horror', 'josei', 'kids', 'magic', 'martial-arts',
-                          'mecha', 'military', 'music', 'mystery', 'parody', 'police',
-                          'psychological', 'romance', 'samurai', 'schoo', 'sci-fi',
-                          'seinen', 'shoujo', 'shoujo-ai', 'shounen', 'shounen-ai',
-                          'slice-of-life', 'space', 'sports', 'super-power',
-                          'supernatural', 'thriller', 'vampire', 'yaoi', 'yuri']
+        genres = {'action' : 'Action', 'adventure' : 'Adventure', 'cars' : 'Cars',
+                  'comedy' : 'Comedy', 'dementia' : 'Dementia', 'demons' : 'Demons',
+                  'drama' : 'Drama', 'ecchi' : 'Ecchi', 'fantasy' : 'Fantasy',
+                  'game' : 'Game', 'harem' : 'Harem', 'historical' : 'Historical',
+                  'horror' : 'Horror', 'josei' : 'Josei', 'kids' : 'Kids',
+                  'magic' : 'Magic', 'martial-arts' : 'Martial Arts',
+                  'mecha' : 'Mecha', 'military' : 'Military', 'music' : 'Music',
+                  'mystery' : 'Mystery', 'parody' : 'Parody', 'police' : 'Police',
+                  'psychological' : 'Psychological', 'romance' : 'Romance',
+                  'samurai' : 'Samurai', 'school' : 'School', 'sci-fi' : 'Sci Fi',
+                  'seinen' : 'Seinen', 'shoujo' : 'Shoujou', 'shoujo-ai' : 'Shoujo Ai',
+                  'shounen' : 'Shounen', 'shounen-ai' : 'Shounen Ai',
+                  'slice-of-life' : 'Slice of Life', 'space' : 'Space',
+                  'sports' : 'Sports', 'super-power' : 'Super Power',
+                  'supernatural' : 'Supernatural', 'thriller' : 'Thriller',
+                  'vampire' : 'Vampire', 'yaoi' : 'Yaoi', 'yuri' : 'Yuri'}
         for i in genres:
-                addDir(i, _domain_url+'genre/'+i, i, iconimage, iconimage)
+                addDir(genres[i], _domain_url+'genre/'+i, i, iconimage, iconimage)
 
 def get_genre(url, mode, iconimage):
     get_anime_list(url, iconimage)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.9anime" name="9anime" version="0.0.1" provider-name="drKrieger">
+<addon id="plugin.video.9anime" name="9anime" version="0.0.2" provider-name="drKrieger">
   <requires>
     <import addon="xbmc.python" version="2.24.0" />
     <import addon="script.module.urlresolver" version="3.0.0" />
@@ -13,7 +13,7 @@
   </extension>
   <extension point="xbmc.addon.metadata">
       <summary lang="en">9anime</summary>
-      <description lang="en">Scrapes 9anime.to and kissanime.ru for anime</description>
+      <description lang="en">Scrapes 9anime.to for anime</description>
       <disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
       <platform>all</platform>
   </extension>
