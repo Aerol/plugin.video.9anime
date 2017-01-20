@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import xbmc,xbmcplugin,xbmcgui,xbmcaddon,xbmcvfs
 import re
 import urllib,urllib2
@@ -11,6 +13,7 @@ from t0mm0.common.addon import Addon
 from metahandler import metahandlers
 
 from config import *
+from resources.lib import control
 
 net = net.Net()
 addon_id = ps('_addon_id')
@@ -65,10 +68,7 @@ def get_anime_list(url, iconimage):
         try:
             if 'item' in i.attrs['class']:
                 title = i.a.img.get('alt').replace(' (Dub)', '').replace(':', '')
-                if 'Movie' in i.div.get_text():
-                    info = metadata.get_meta('movie', name=title, imdb_id='')
-                else:
-                    info = metadata.get_meta('tvshow', name=title, imdb_id='')
+                info = metadata.get_meta('tvshow', name=title, imdb_id='')
                 addDir(i.a.img.get('alt'), i.a.get('href'), 99, info['cover_url'], info['backdrop_url'], info['plot'])
         except:
             pass
@@ -81,8 +81,8 @@ def get_anime_list(url, iconimage):
         except:
             pass
 
-def get_episodes(url, iconimage):
-    print("get_episodes called")
+def get_episodes(url, title, iconimage):
+    metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
     temp = soup.find_all('div')
@@ -95,9 +95,13 @@ def get_episodes(url, iconimage):
             pass
     for i in eps:
         print(_domain_url+i.get('data-id'))
-        addDir("Episode "+i.get('data-base'), i.get('data-id'), 98, iconimage, iconimage)
+        print title
+        info = metadata.get_episode_meta(title, '', 1, i.get('data-base'), episode_title=title)
+        print(info)
+        addDir(info['title'], i.get('data-id'), 98, info['poster'], info['cover_url'], info['plot'], info)
+        #addDir("Episode "+i.get('data-base'), i.get('data-id'), 98, iconimage, iconimage)
 
-def get_video_links(name, url, iconimage):
+def get_video_links(name, url, iconimage, meta):
     print(name)
     print(url)
     print(iconimage)
@@ -109,8 +113,14 @@ def get_video_links(name, url, iconimage):
     base_grabber = 'https://9anime.to/grabber-api/?id='+vid_id+'&token='+token+'&options='+options
     video_links = simplejson.loads(open_url(base_grabber))
     print(video_links)
+    links_list = {}
     for i in video_links['data']:
-        addLink(i['label'], i['file'], 97, iconimage, iconimage)
+        links_list[i['label']] = i['file']
+    #for i in video_links['data']:
+        #addLink(i['label'], i['file'], 97, iconimage, iconimage)
+        #choice = addDialog(i['label'], i['file'], 97, iconimage, iconimage)
+    choice = addDialog(links_list, 'Description goes here', 97, meta)
+    #PLAYLINK('test', choice, iconimage)
 
 def search(url):
     search_entered = ''
@@ -126,16 +136,26 @@ def do_search(url):
     get_anime_list(url, anime)
 
 def main():
-    addDir('Most Watched', _domain_url+'most-watched', 3, anime, fanart)
+    addDir('Most Watched', _domain_url+'filter?type[]=series&sort=views%3Adesc', 3, anime, fanart)
     addDir('Search', _domain_url+'search?keyword=', 4, anime, fanart)
     addDir('Newest', _domain_url+'newest', 2, anime, fanart)
     addDir('Genre', _domain_url+'genre', 1, anime, fanart)
 
-def addDir(name,url,mode,iconimage,fanart,description=''):
+def addDir(name,url,mode,iconimage,fanart,description='', meta=''):
     '''
-    name, url, mode, iconimage, fanart, description=""
+    Add directory item to GUI
+
+    Args:
+        name (str): Entry label
+        url (str): url/path for entry to link to
+        iconimage (str): url/path of poster image
+        fanart (str): url/path of fanart image for background
+
+    Kwargs:
+        description (str): Description of entry (eg episode plot or show description)
+        meta = (dct): metahandler dictionary
     '''
-    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)
+    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)+"&meta="+meta
     ok=True
     liz=xbmcgui.ListItem(name.strip(), iconImage="DefaultFolder.png", thumbnailImage=iconimage)
     liz.setInfo( type="Video", infoLabels={ "Title": name, "Plot": description} )
@@ -143,7 +163,20 @@ def addDir(name,url,mode,iconimage,fanart,description=''):
     ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
     return ok
 
-def addLink(name,url,mode,iconimage,fanart,description=''):
+def addLink(name,url,mode,iconimage,fanart,description='', meta=''):
+    '''
+    Add link item to GUI
+
+    Args:
+        name (str): Entry label
+        url (str): url/path for entry to link to
+        iconimage (str): url/path of poster image
+        fanart (str): url/path of fanart image for background
+
+    Kwargs:
+        description (str): Description of entry (eg episode plot or show description)
+        meta = (dct): metahandler dictionary
+    '''
     u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)
     ok=True
     liz=xbmcgui.ListItem(name.strip(), iconImage="DefaultFolder.png", thumbnailImage=iconimage)
@@ -152,12 +185,34 @@ def addLink(name,url,mode,iconimage,fanart,description=''):
     ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=False)
     return ok
 
+
+def addDialog(dct, desc, mode, meta=''):
+    lst = []
+    url = []
+    for i in dct:
+        name = i
+        url.append(dct[i])
+        liz = xbmcgui.ListItem(name.strip(), iconImage="DefaultFolder.png")
+        liz.setInfo(type="video", infoLabels={"title" : name, 'plot' : desc, 'path' : url})
+        lst.append(liz)
+    dialog = xbmcgui.Dialog()
+    ok = dialog.select('Choose', lst)
+    url = url[ok]
+    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(desc)
+    return url
+
 def PLAYLINK(name,url,iconimage):
     liz=xbmcgui.ListItem(name, iconimage)
     xbmc.Player().play(url, liz, False)
 
-def get_playlink(name, url, iconimage):
-    PLAYLINK(name, url, iconimage)
+def get_playlink(url, meta):
+    title = meta['TVShowtitle']
+    year = meta['year']
+    season = meta['season']
+    episode = meta['episode']
+    tvdb = meta['tvdb_id']
+    #PLAYLINK(name, url, iconimage)
+    player().run(title, year, season, episode, tvdb, url, meta)
 
 def open_url(url):
     print("opening url "+url)
@@ -215,8 +270,6 @@ if __name__ == '__main__':
     except:
         pass
 
-    print(type(mode))
-
     if mode is None or url is None or len(url) < 1:
         main()
     elif mode is 1:
@@ -228,11 +281,11 @@ if __name__ == '__main__':
     elif mode is 4:
         search(url)
     elif mode is 97:
-        get_playlink(name, url, iconimage)
+        get_playlink(url, meta)
     elif mode is 98:
         get_video_links(name, url, iconimage)
     elif mode is 99:
-        get_episodes(url, iconimage)
+        get_episodes(url, name, iconimage)
     elif mode is 100:
         get_play_link(name, url, iconimage)
     elif 'str' in str(type(mode)):
