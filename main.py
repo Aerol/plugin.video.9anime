@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import simplejson
 
 from t0mm0.common.addon import Addon
+from metahandler import metahandlers
 
 from config import *
 
@@ -48,6 +49,7 @@ def get_most_watched(url, iconimage):
     get_anime_list(url, iconimage)
 
 def get_anime_list(url, iconimage):
+    metadata = metahandlers.MetaData(preparezip=False)
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
     temp = soup.find_all('div')
@@ -210,7 +212,7 @@ if __name__ == '__main__':
         get_genres(url, iconimage)
     elif mode is 2:
         print "entered mode 2"
-        get_newest(url, iconimage)
+        get_newest(url, mode, iconimage)
     elif mode is 3:
         print "entered mode 3, executing get_most_watched("+url+")"
         get_most_watched(url, iconimage)
