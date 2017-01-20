@@ -49,15 +49,19 @@ def get_most_watched(url, iconimage):
     get_anime_list(url, iconimage)
 
 def get_anime_list(url, iconimage):
-    metadata = metahandlers.MetaData(preparezip=False)
+    metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
     temp = soup.find_all('div')
     for i in temp:
         try:
             if 'item' in i.attrs['class']:
-                s = BeautifulSoup(open_url(_domain_url+i.a.get('data-tip')))
-                addDir(i.a.img.get('alt'), i.a.get('href'), 99, i.a.img.get('src'), iconimage, s.find_all('span')[7].get_text())
+                title = i.a.img.get('alt').replace(' (Dub)', '').replace(':', '')
+                if 'Movie' in i.div.get_text():
+                    info = metadata.get_meta('movie', name=title, imdb_id='')
+                else:
+                    info = metadata.get_meta('tvshow', name=title, imdb_id='')
+                addDir(i.a.img.get('alt'), i.a.get('href'), 99, info['cover_url'], info['backdrop_url'], info['plot'])
         except:
             pass
     temp = soup.find_all('a')
