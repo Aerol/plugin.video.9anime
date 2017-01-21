@@ -33,7 +33,7 @@ except:pass
 file_var = open(xbmc.translatePath(os.path.join(datapath, 'cookie.lwp')), "a")
 cookie_file = os.path.join(os.path.join(datapath,''), 'cookie.lwp')
 
-def get_genres(url, iconimage):
+def get_genres(url):
         genres = {'action' : 'Action', 'adventure' : 'Adventure', 'cars' : 'Cars',
                   'comedy' : 'Comedy', 'dementia' : 'Dementia', 'demons' : 'Demons',
                   'drama' : 'Drama', 'ecchi' : 'Ecchi', 'fantasy' : 'Fantasy',
@@ -51,7 +51,7 @@ def get_genres(url, iconimage):
                   'supernatural' : 'Supernatural', 'thriller' : 'Thriller',
                   'vampire' : 'Vampire', 'yaoi' : 'Yaoi', 'yuri' : 'Yuri'}
         for i in genres:
-                addDir(genres[i], _domain_url+'genre/'+i, i, iconimage, iconimage)
+                addDir(genres[i], 'get_genre&url='+_domain_url+'genre/'+i, i, 'DefaultTvShows.png', 'DefaultTvShows.png')
 
 def get_genre(url):
     get_anime_list(url)
@@ -260,9 +260,11 @@ if __name__ == '__main__':
     elif action == 'search':
         search(url)
     elif action == 'mostwatched':
-        get_most_watched(url, image)
+        get_most_watched(url)
     elif action == 'genres':
-        get_genre(url, image)
+        get_genres(url)
+    elif action == 'get_genre':
+        get_genre(url)
     elif action == 'get_episodes':
         get_episodes(url, title, image)
     elif action == 'get_video_links':
