@@ -14,7 +14,8 @@ from t0mm0.common.addon import Addon
 from metahandler import metahandlers
 
 from config import *
-from resources.lib import control
+from resources.lib.modules import control
+from resources.lib import navigator
 
 net = net.Net()
 addon_id = ps('_addon_id')
@@ -51,10 +52,10 @@ def get_genres(url, iconimage):
         for i in genres:
                 addDir(genres[i], _domain_url+'genre/'+i, i, iconimage, iconimage)
 
-def get_genre(url, mode, iconimage):
+def get_genre(url, iconimage):
     get_anime_list(url, iconimage)
 
-def get_newest(url, mode, iconimage):
+def get_newest(url, iconimage):
     get_anime_list(url, iconimage)
 
 def get_most_watched(url, iconimage):
@@ -137,10 +138,11 @@ def do_search(url):
     get_anime_list(url, anime)
 
 def main():
-    addDir('Most Watched', _domain_url+'filter?type[]=series&sort=views%3Adesc', 3, anime, fanart)
-    addDir('Search', _domain_url+'search?keyword=', 4, anime, fanart)
-    addDir('Newest', _domain_url+'newest', 2, anime, fanart)
-    addDir('Genre', _domain_url+'genre', 1, anime, fanart)
+    # addDir('Most Watched', _domain_url+'filter?type[]=series&sort=views%3Adesc', 3, anime, fanart)
+    # addDir('Search', _domain_url+'search?keyword=', 4, anime, fanart)
+    # addDir('Newest', _domain_url+'newest', 2, anime, fanart)
+    # addDir('Genre', _domain_url+'genre', 1, anime, fanart)
+    navigator.addDirectoryItem('Most Watched', 'mostwatched', 'DefaultTvShows.png')
 
 def addDir(name,url,mode,iconimage,fanart,description='', meta=''):
     '''
@@ -244,14 +246,14 @@ if __name__ == '__main__':
     print params
 
     if action == None:
-        main()
+        navigator.navigator().root()
     elif action == 'movies':
         pass
     elif action == 'search':
-        pass
+        search(url)
     elif action == 'mostwatched':
-        pass
+        get_most_watched(url, image)
     elif action == 'genres':
-        pass
+        get_genre(url, image)
 
     xbmcplugin.endOfDirectory(int(sys.argv [1]))

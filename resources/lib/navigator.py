@@ -24,6 +24,8 @@ import os,sys,urlparse
 from resources.lib.modules import control
 from resources.lib.modules import trakt
 
+from config import *
+
 
 sysaddon = sys.argv[0] ; syshandle = int(sys.argv[1]) ; control.moderator()
 
@@ -37,10 +39,15 @@ traktIndicators = trakt.getTraktIndicatorsInfo()
 
 queueMenu = control.lang(32065).encode('utf-8')
 
+url = ps('_domain_url')
+
 
 class navigator:
     def root(self):
-        self.addDirectoryItem(32010, 'search', 'genres.png', 'DefaultTvShows.png')
+        self.addDirectoryItem('Most Watched', 'mostwatched&url='+url+'filter?type[]=series&sort=views%3Adesc', 'genres.png', 'DefaultTvShows.png')
+        self.addDirectoryItem('Search', 'search', 'genres.png', 'DefaultTvShows.png')
+        self.addDirectoryItem('Movies', 'movies', 'genres.png', 'DefaultTvShows.png')
+        self.addDirectoryItem('Genres', 'genres', 'genres.png', 'DefaultTvShows.png')
         self.endDirectory()
 
 
