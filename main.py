@@ -8,6 +8,7 @@ import net
 
 from bs4 import BeautifulSoup
 import simplejson
+import urlparse
 
 from t0mm0.common.addon import Addon
 from metahandler import metahandlers
@@ -155,7 +156,7 @@ def addDir(name,url,mode,iconimage,fanart,description='', meta=''):
         description (str): Description of entry (eg episode plot or show description)
         meta = (dct): metahandler dictionary
     '''
-    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)+"&meta="+meta
+    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&action="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)+"&meta="+meta
     ok=True
     liz=xbmcgui.ListItem(name.strip(), iconImage="DefaultFolder.png", thumbnailImage=iconimage)
     liz.setInfo( type="Video", infoLabels={ "Title": name, "Plot": description} )
@@ -218,77 +219,39 @@ def open_url(url):
     print("opening url "+url)
     net.set_cookies(cookie_file)
     link = net.http_GET(url).content
-    #link = cleanHex(link)
     return link
 
-def get_params():
-    param=[]
-    paramstring=sys.argv[2]
-    if len(paramstring)>=2:
-        params=sys.argv[2]
-        cleanedparams=params.replace('?','')
-        if (params[len(params)-1]=='/'):
-            params=params[0:len(params)-2]
-        pairsofparams=cleanedparams.split('&')
-        param={}
-        for i in range(len(pairsofparams)):
-            splitparams={}
-            splitparams=pairsofparams[i].split('=')
-            if (len(splitparams))==2:
-                param[splitparams[0]]=splitparams[1]
-    return param
-
-def cleanHex(text):
-    def fixup(m):
-        text = m.group(0)
-        if text[:3] == "&#x": return unichr(int(text[3:-1], 16)).encode('utf-8')
-        else: return unichr(int(text[2:-1])).encode('utf-8')
-        try :return re.sub("(?i)&#\w+;", fixup, text.decode('ISO-8859-1').encode('utf-8'))
-        except:return re.sub("(?i)&#\w+;", fixup, text.encode("ascii", "ignore").encode('utf-8'))
-
 if __name__ == '__main__':
-    params=get_params()
-    url=None; name=None; mode=None; site=None; iconimage=None
-    try:
-        site = urllib.unquote_plus(params["site"])
-    except:
-        pass
-    try:
-        url = urllib.unquote_plus(params["url"])
-    except:
-        pass
-    try:
-        name = urllib.unquote_plus(params["name"])
-        if params["mode"].isdigit():
-            mode=int(params["mode"])
-        else:
-            mode = params["mode"]
-    except:
-        pass
-    try:
-        iconimage = urllib.unquote_plus(params["iconimage"])
-    except:
-        pass
+    params = dict(urlparse.parse_qsl(sys.argv[2].replace('?','')))
 
-    if mode is None or url is None or len(url) < 1:
+    action = params.get('action')
+    name = params.get('name')
+    title = params.get('title')
+    year = params.get('year')
+    imdb = params.get('imdb')
+    tvdb = params.get('tvdb')
+    season = params.get('season')
+    episode = params.get('episode')
+    premiered = params.get('premiered')
+    url = params.get('url')
+    image = params.get('image')
+    meta = params.get('meta')
+    select = params.get('select')
+    query = params.get('query')
+    source = params.get('source')
+    content = params.get('content')
+
+    print params
+
+    if action == None:
         main()
-    elif mode is 1:
-        get_genres(url, iconimage)
-    elif mode is 2:
-        get_newest(url, mode, iconimage)
-    elif mode is 3:
-        get_most_watched(url, iconimage)
-    elif mode is 4:
-        search(url)
-    elif mode is 97:
-        get_playlink(url, meta)
-    elif mode is 98:
-        get_video_links(name, url, iconimage)
-    elif mode is 99:
-        get_episodes(url, name, iconimage)
-    elif mode is 100:
-        get_play_link(name, url, iconimage)
-    elif 'str' in str(type(mode)):
-        get_genre(url, mode, iconimage)
+    elif action == 'movies':
+        pass
+    elif action == 'search':
+        pass
+    elif action == 'mostwatched':
+        pass
+    elif action == 'genres':
+        pass
 
     xbmcplugin.endOfDirectory(int(sys.argv [1]))
