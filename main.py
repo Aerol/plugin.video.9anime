@@ -15,6 +15,7 @@ from metahandler import metahandlers
 
 from config import *
 from resources.lib.modules import control
+from resources.lib.modules import player
 from resources.lib import navigator
 
 net = net.Net()
@@ -52,28 +53,32 @@ def get_genres(url, iconimage):
         for i in genres:
                 addDir(genres[i], _domain_url+'genre/'+i, i, iconimage, iconimage)
 
-def get_genre(url, iconimage):
+def get_genre(url):
+    get_anime_list(url)
+
+def get_newest(url):
     get_anime_list(url, iconimage)
 
-def get_newest(url, iconimage):
-    get_anime_list(url, iconimage)
+def get_most_watched(url):
+    get_anime_list(url+'filter?type[]=series&sort=views%3Adesc')
 
-def get_most_watched(url, iconimage):
-    get_anime_list(url, iconimage)
-
-def get_anime_list(url, iconimage):
+def get_anime_list(url):
     metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
     temp = soup.find_all('div')
+
     for i in temp:
         try:
             if 'item' in i.attrs['class']:
                 title = i.a.img.get('alt').replace(' (Dub)', '').replace(':', '')
                 info = metadata.get_meta('tvshow', name=title, imdb_id='')
-                addDir(i.a.img.get('alt'), i.a.get('href'), 99, info['cover_url'], info['backdrop_url'], info['plot'])
+                #addDir(i.a.img.get('alt'), i.a.get('href'), 99, info['cover_url'], info['backdrop_url'], info['plot'])
+                navigator.navigator().addDirectoryItem(i.a.img.get('alt'), 'get_episodes&url='+i.a.get('href')+'&title='+info['TVShowTitle'], info['cover_url'], info['backdrop_url'])
+#&url='+i.a.get('href')+'&title='+info['TVShowTitle']+'&image='+info['cover_url']+'&plot='+info[plot]
         except:
             pass
+
     temp = soup.find_all('a')
     for i in temp:
         try:
@@ -82,6 +87,7 @@ def get_anime_list(url, iconimage):
                     addDir(i.get_text(), _domain_url+i.attrs['href'], 3, iconimage, iconimage)
         except:
             pass
+    navigator.navigator().endDirectory()
 
 def get_episodes(url, title, iconimage):
     metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
@@ -96,17 +102,18 @@ def get_episodes(url, title, iconimage):
         except:
             pass
     for i in eps:
-        print(_domain_url+i.get('data-id'))
-        print title
+        print(title)
         info = metadata.get_episode_meta(title, '', 1, i.get('data-base'), episode_title=title)
         print(info)
-        addDir(info['title'], i.get('data-id'), 98, info['poster'], info['cover_url'], info['plot'], info)
+        #addDir(info['title'], i.get('data-id'), 98, info['poster'], info['cover_url'], info['plot'], info)
+        navigator.navigator().addDirectoryItem(info['title'],
+                                               'get_video_links&url='+i.get('data-id')+'&title='+info['title']+'&season='+str(info ['season'])+'&episode='+str(info ['episode']),
+                                               info['cover_url'],
+                                               info['backdrop_url'])
         #addDir("Episode "+i.get('data-base'), i.get('data-id'), 98, iconimage, iconimage)
 
-def get_video_links(name, url, iconimage, meta):
-    print(name)
+def get_video_links(url, title, year, season, episode):
     print(url)
-    print(iconimage)
     vid_info = simplejson.loads(open_url('https://9anime.to/ajax/episode/info?id='+url+"&update=0"))
     print(vid_info)
     vid_id = vid_info['params']['id']
@@ -121,10 +128,13 @@ def get_video_links(name, url, iconimage, meta):
     #for i in video_links['data']:
         #addLink(i['label'], i['file'], 97, iconimage, iconimage)
         #choice = addDialog(i['label'], i['file'], 97, iconimage, iconimage)
-    choice = addDialog(links_list, 'Description goes here', 97, meta)
+    choice = addDialog(links_list)
     #PLAYLINK('test', choice, iconimage)
+    print(choice, title, season, episode)
+    player.player().run(title, year, season, episode, '', '', choice, '')
 
 def search(url):
+    url = url+'search?keyword='
     search_entered = ''
     keyboard = xbmc.Keyboard(search_entered, 'Search')
     keyboard.doModal()
@@ -135,7 +145,7 @@ def search(url):
         do_search(url)
 
 def do_search(url):
-    get_anime_list(url, anime)
+    get_anime_list(url)
 
 def main():
     # addDir('Most Watched', _domain_url+'filter?type[]=series&sort=views%3Adesc', 3, anime, fanart)
@@ -189,19 +199,17 @@ def addLink(name,url,mode,iconimage,fanart,description='', meta=''):
     return ok
 
 
-def addDialog(dct, desc, mode, meta=''):
+def addDialog(dct):
     lst = []
     url = []
     for i in dct:
         name = i
         url.append(dct[i])
-        liz = xbmcgui.ListItem(name.strip(), iconImage="DefaultFolder.png")
-        liz.setInfo(type="video", infoLabels={"title" : name, 'plot' : desc, 'path' : url})
-        lst.append(liz)
-    dialog = xbmcgui.Dialog()
-    ok = dialog.select('Choose', lst)
-    url = url[ok]
-    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(desc)
+        lst.append(i)
+    dlg = control.selectDialog(lst)
+    url = url[dlg]
+    print url
+    #u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(desc)
     return url
 
 def PLAYLINK(name,url,iconimage):
@@ -243,7 +251,7 @@ if __name__ == '__main__':
     source = params.get('source')
     content = params.get('content')
 
-    print params
+    print(params)
 
     if action == None:
         navigator.navigator().root()
@@ -255,5 +263,9 @@ if __name__ == '__main__':
         get_most_watched(url, image)
     elif action == 'genres':
         get_genre(url, image)
+    elif action == 'get_episodes':
+        get_episodes(url, title, image)
+    elif action == 'get_video_links':
+        get_video_links(url, title, year, season, episode)
 
     xbmcplugin.endOfDirectory(int(sys.argv [1]))

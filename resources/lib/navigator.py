@@ -44,8 +44,8 @@ url = ps('_domain_url')
 
 class navigator:
     def root(self):
-        self.addDirectoryItem('Most Watched', 'mostwatched&url='+url+'filter?type[]=series&sort=views%3Adesc', 'genres.png', 'DefaultTvShows.png')
-        self.addDirectoryItem('Search', 'search', 'genres.png', 'DefaultTvShows.png')
+        self.addDirectoryItem('Most Watched', 'mostwatched&url='+url, 'genres.png', 'DefaultTvShows.png')
+        self.addDirectoryItem('Search', 'search&url='+url, 'genres.png', 'DefaultTvShows.png')
         self.addDirectoryItem('Movies', 'movies', 'genres.png', 'DefaultTvShows.png')
         self.addDirectoryItem('Genres', 'genres', 'genres.png', 'DefaultTvShows.png')
         self.endDirectory()
