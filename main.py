@@ -64,8 +64,8 @@ def get_anime_list(url, iconimage):
     for i in temp:
         try:
             if 'item' in i.attrs['class']:
-                s = BeautifulSoup(open_url(_domain_url+i.a.get('data-tip')))
-                addDir(i.a.img.get('alt'), i.a.get('href'), 99, i.a.img.get('src'), iconimage, s.find_all('span')[7].get_text())
+                #s = BeautifulSoup(open_url(_domain_url+i.a.get('data-tip')))
+                addDir(i.a.img.get('alt'), i.a.get('href'), 99, i.a.img.get('src'), iconimage)#, s.find_all('span')[7].get_text())
         except:
             pass
     temp = soup.find_all('a')
