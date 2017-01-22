@@ -404,3 +404,5 @@ class bookmarks:
             dbcon.commit()
         except:
             pass
+
+
