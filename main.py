@@ -71,36 +71,41 @@ def get_movies(url):
     get_anime_list(url+'filter?type[]=movie&sort=views%3Adesc')
 
 def get_anime_list(url):
+    print(url)
     metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
     temp = soup.find_all('div')
-
+    show = []
     for i in temp:
         try:
             if 'item' in i.attrs['class']:
                 title = i.a.img.get('alt').replace(' (Dub)', '').replace(':', '')
                 info = metadata.get_meta('tvshow', name=title, imdb_id='')
-                #addDir(i.a.img.get('alt'), i.a.get('href'), 99, info['cover_url'], info['backdrop_url'], info['plot'])
-                navigator.navigator().addDirectoryItem(
-                        i.a.img.get('alt'),
-                        'get_episodes&url='+i.a.get('href')+'&title='+info['TVShowTitle'],
-                        info['cover_url'],
-                        info['backdrop_url'])
+                show.append({'name' : i.a.img.get('alt'),
+                             'url' : 'get_episodes&url={}&title={}'.format(i.a.get('href'), info['title']),
+                             'image' : info['cover_url'],
+                             'fanart' : info['backdrop_url'],
+                             'desc' : info['plot']})
         except:
-            pass
+            print('Caught exception: {}'.format(sys.exc_info()[0]))
 
     temp = soup.find_all('a')
     for i in temp:
         try:
             if 'btn' in i.attrs['class']:
                 if 'Next' in i.get_text():
-                    navigator.navigator().addDirectoryItem(i.get_text(), 'next_page&url='+_domain_url+i.attrs['href'], 'tvshows.png', 'DefaultTVShows.png')
+                    show.append({'name' : 'Next',
+                                 'url' : 'next_page&url={}'.format(urllib.quote_plus(_domain_url+i.attrs.get('href'))),
+                                 'image' : '',
+                                 'fanart' : '',
+                                 'desc' : ''})
         except:
-            pass
-    navigator.navigator().endDirectory()
+            print('Caught exception: {}'.format(sys.exc_info()[0]))
+    print(show)
+    addDirectory(show)
 
-def get_episodes(url, title, iconimage):
+def get_episodes(url, title):
     metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
     html = open_url(url)
     soup = BeautifulSoup(html, 'html.parser')
@@ -156,7 +161,6 @@ def get_video_links(url, title, year, season, episode, show):
     #player.player().run(title, year, season, episode, '', '', links_list[choice], '')
 
 def search(url):
-    print(sys.argv)
     try:
         control.idle()
 
@@ -176,35 +180,6 @@ def search(url):
 
 def do_search(url):
     get_anime_list(url)
-
-def main():
-    # addDir('Most Watched', _domain_url+'filter?type[]=series&sort=views%3Adesc', 3, anime, fanart)
-    # addDir('Search', _domain_url+'search?keyword=', 4, anime, fanart)
-    # addDir('Newest', _domain_url+'newest', 2, anime, fanart)
-    # addDir('Genre', _domain_url+'genre', 1, anime, fanart)
-    navigator.addDirectoryItem('Most Watched', 'mostwatched', 'DefaultTvShows.png')
-
-def addDir(name,url,mode,iconimage,fanart,description='', meta=''):
-    '''
-    Add directory item to GUI
-
-    Args:
-        name (str): Entry label
-        url (str): url/path for entry to link to
-        iconimage (str): url/path of poster image
-        fanart (str): url/path of fanart image for background
-
-    Kwargs:
-        description (str): Description of entry (eg episode plot or show description)
-        meta = (dct): metahandler dictionary
-    '''
-    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&action="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)+"&meta="+meta
-    ok=True
-    liz=xbmcgui.ListItem(name.strip(), iconImage="DefaultFolder.png", thumbnailImage=iconimage)
-    liz.setInfo( type="Video", infoLabels={ "Title": name, "Plot": description} )
-    liz.setProperty('fanart_image', fanart)
-    ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
-    return ok
 
 def addLink(items):
     print(items)
@@ -332,7 +307,7 @@ if __name__ == '__main__':
     elif action == 'next_page':
         get_anime_list(url)
     elif action == 'get_episodes':
-        get_episodes(url, title, image)
+        get_episodes(url, title)
     elif action == 'get_video_links':
         get_video_links(url, title, year, season, episode, show)
     elif action == 'playlink':
