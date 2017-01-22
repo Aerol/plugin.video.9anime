@@ -156,15 +156,23 @@ def get_video_links(url, title, year, season, episode, show):
     #player.player().run(title, year, season, episode, '', '', links_list[choice], '')
 
 def search(url):
-    url = url+'search?keyword='
-    search_entered = ''
-    keyboard = xbmc.Keyboard(search_entered, 'Search')
-    keyboard.doModal()
-    if keyboard.isConfirmed():
-        search_entered = keyboard.getText().replace(' ','+')
-    if len(search_entered) > 1:
-        url = url + search_entered
-        do_search(url)
+    print(sys.argv)
+    try:
+        control.idle()
+
+        url = url+'search?keyword='
+        k = control.keyboard('', 'Search')
+        k.doModal()
+        q = k.getText() if k.isConfirmed() else None
+
+        if (q == None or q == ''):
+            return
+
+        url = url + urllib.quote_plus(q)
+        url = "{}?action=do_search&url={}".format(sys.argv[0], urllib.quote_plus(url))
+        control.execute('Container.Update({})'.format(url))
+    except:
+        return
 
 def do_search(url):
     get_anime_list(url)
@@ -230,7 +238,7 @@ def addDirectory(items):
         sys.exit()
     sysaddon = sys.argv[0]
     syshandle = int(sys.argv[1])
-    addonFanart, addonThumb, artPath = control.addonFanart(), control.addonThumb(), control.artPath()
+    ddonThumb, artPath = control.addonThumb(), control.artPath()
 
     for i in items:
         try:
@@ -329,5 +337,7 @@ if __name__ == '__main__':
         get_video_links(url, title, year, season, episode, show)
     elif action == 'playlink':
         playlink(url, meta)
+    elif action == 'do_search':
+        do_search(url)
 
     xbmcplugin.endOfDirectory(int(sys.argv [1]))
