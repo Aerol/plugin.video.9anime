@@ -7,7 +7,6 @@ Requirements
 - BeautifulSoup4
 - urlresolver
 - metahandler
-- t0mm0.common
 - simplejson
 
 What's to come

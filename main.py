@@ -10,7 +10,6 @@ from bs4 import BeautifulSoup
 import simplejson
 import urlparse
 
-from t0mm0.common.addon import Addon
 from metahandler import metahandlers
 
 from config import *
@@ -24,7 +23,6 @@ _domain_url = ps('_domain_url')
 selfAddon = xbmcaddon.Addon(id=addon_id)
 addonname = selfAddon.getAddonInfo('name')
 datapath= xbmc.translatePath(selfAddon.getAddonInfo('profile'))
-addon = Addon(addon_id, sys.argv)
 fanart = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id , 'fanart.jpg'))
 icon = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'icon.png'))
 anime = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'anime.png'))
