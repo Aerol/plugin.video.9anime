@@ -118,7 +118,6 @@ def get_episodes(url, title):
     episodes = []
     for i in eps:
         info = metadata.get_episode_meta(title, '', 1, i.get('data-base'), episode_title=title)
-        #addDir(info['title'], i.get('data-id'), 98, info['poster'], info['cover_url'], info['plot'], info)
         episodes.append({'name' : 'Episode {} - {}'.format(info['episode'], info['title']),
                          'url' : 'get_video_links&url='+i.get('data-id')+'&title='+info ['title']+'&season='+str(info ['season'])+'&episode='+str(info ['episode'])+'&show='+info['TVShowTitle'],
                          'image' : info['cover_url'],
@@ -152,7 +151,8 @@ def get_video_links(url, title, year, season, episode, show):
                       'desc' : info['plot']})
         #addLink(i['label'], i['file'], 97, iconimage, iconimage)
         #choice = addDialog(i['label'], i['file'], 97, iconimage, iconimage)
-    addLink(items)
+    select = addLink(items)
+    return select
     #choice = control.selectDialog(links_list)
     #PLAYLINK('test', choice, iconimage)
     #print(choice, title, season, episode)
@@ -232,18 +232,23 @@ def addDirectory(items):
             pass
 
 
-def addDialog(dct):
-    lst = []
-    url = []
-    for i in dct:
-        name = i
-        url.append(dct[i])
-        lst.append(i)
-    dlg = control.selectDialog(lst)
-    url = url[dlg]
-    print url
-    #u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(desc)
-    return url
+def addDialog(items):
+    try:
+        print('in addDialog({})'.format(items))
+        labels = [i['name'] for i in items]
+
+        select = control.selectDialog(labels)
+        if select == -1: return 'close://'
+
+        url = items[select]['url']
+        url = '{}?action={}'.format(sys.argv[0], url)
+        print(url)
+        control.execute('Container.Update({})'.format(url))
+
+        return items[select]
+    except:
+        print('Caught exception in addDialog: {}'.format(sys.exc_info()[0]))
+
 
 def PLAYLINK(name,url,iconimage):
     liz=xbmcgui.ListItem(name, iconimage)
