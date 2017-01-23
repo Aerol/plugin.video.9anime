@@ -84,6 +84,7 @@ def get_anime_list(url):
                              'url' : 'get_episodes&url={}&title={}'.format(i.a.get('href'), info['title']),
                              'image' : info['cover_url'],
                              'fanart' : info['backdrop_url'],
+                             'banner' : info['banner_url'],
                              'desc' : info['plot']})
         except:
             print('Caught exception: {}'.format(sys.exc_info()[0]))
@@ -211,19 +212,22 @@ def addDirectory(items):
         sys.exit()
     sysaddon = sys.argv[0]
     syshandle = int(sys.argv[1])
-    ddonThumb, artPath = control.addonThumb(), control.artPath()
+    addonThumb, artPath = control.addonThumb(), control.artPath()
 
     for i in items:
         try:
             name = i['name']
             thumb = i['image']
             url = '%s?action=%s' % (sysaddon, i['url'])
-            print(url)
             fanart = i['fanart']
+            try:
+                banner = i['banner']
+            except:
+                banner = ''
             desc = i['desc']
 
             item = control.item(label=name)
-            item.setArt({'icon' : thumb, 'thumb' : thumb, 'fanart' : fanart})
+            item.setArt({'icon' : thumb, 'thumb' : thumb, 'fanart' : fanart, 'banner' : banner})
             item.setInfo(type='Video', infoLabels={"Title" : name, 'Plot' : desc})
             item.setProperty('fanart_image', fanart)
 
