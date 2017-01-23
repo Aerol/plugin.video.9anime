@@ -102,7 +102,7 @@ def get_anime_list(url):
         except:
             print('Caught exception: {}'.format(sys.exc_info()[0]))
     print(show)
-    addDirectory(show)
+    addDirectory(show, 'tvshows')
 
 def get_episodes(url, title):
     metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
@@ -124,7 +124,7 @@ def get_episodes(url, title):
                          'image' : info['cover_url'],
                          'fanart' : info['backdrop_url'],
                          'desc' : info['plot']})
-    addDirectory(episodes)
+    addDirectory(episodes, 'episodes')
 
 def get_video_links(url, title, year, season, episode, show):
     print(url)
@@ -152,7 +152,7 @@ def get_video_links(url, title, year, season, episode, show):
                       'desc' : info['plot']})
         #addLink(i['label'], i['file'], 97, iconimage, iconimage)
         #choice = addDialog(i['label'], i['file'], 97, iconimage, iconimage)
-    select = addDialog(items)
+    select = addLink(items)
     return select
     #choice = control.selectDialog(links_list)
     #PLAYLINK('test', choice, iconimage)
@@ -205,7 +205,7 @@ def addLink(items):
         except:
             pass
 
-def addDirectory(items):
+def addDirectory(items, content):
     print(items)
     if items == None or len(items) == 0:
         control.idle()
@@ -230,6 +230,7 @@ def addDirectory(items):
             item.setArt({'icon' : thumb, 'thumb' : thumb, 'fanart' : fanart, 'banner' : banner})
             item.setInfo(type='Video', infoLabels={"Title" : name, 'Plot' : desc})
             item.setProperty('fanart_image', fanart)
+            control.content(syshandle, content)
 
             control.addItem(handle=syshandle, url=url, listitem=item, isFolder=True)
         except:
