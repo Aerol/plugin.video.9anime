@@ -84,6 +84,7 @@ def get_anime_list(url):
                              'url' : 'get_episodes&url={}&title={}'.format(i.a.get('href'), info['title']),
                              'image' : info['cover_url'],
                              'fanart' : info['backdrop_url'],
+                             'banner' : info['banner_url'],
                              'desc' : info['plot']})
         except:
             print('Caught exception: {}'.format(sys.exc_info()[0]))
@@ -151,7 +152,7 @@ def get_video_links(url, title, year, season, episode, show):
                       'desc' : info['plot']})
         #addLink(i['label'], i['file'], 97, iconimage, iconimage)
         #choice = addDialog(i['label'], i['file'], 97, iconimage, iconimage)
-    select = addDialog(items)
+    select = addLink(items)
     return select
     #choice = control.selectDialog(links_list)
     #PLAYLINK('test', choice, iconimage)
@@ -220,10 +221,11 @@ def addDirectory(items):
             url = '%s?action=%s' % (sysaddon, i['url'])
             print(url)
             fanart = i['fanart']
+            banner = i['banner']
             desc = i['desc']
 
             item = control.item(label=name)
-            item.setArt({'icon' : thumb, 'thumb' : thumb, 'fanart' : fanart})
+            item.setArt({'icon' : thumb, 'thumb' : thumb, 'fanart' : fanart, 'banner' : banner})
             item.setInfo(type='Video', infoLabels={"Title" : name, 'Plot' : desc})
             item.setProperty('fanart_image', fanart)
 
