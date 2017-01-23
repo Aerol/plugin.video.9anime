@@ -118,7 +118,7 @@ def get_episodes(url, title):
     episodes = []
     for i in eps:
         info = metadata.get_episode_meta(title, '', 1, i.get('data-base'), episode_title=title)
-        episodes.append({'name' : 'Episode {} - {}'.format(info['episode'], info['title']),
+        episodes.append({'name' : 'Episode {} - {}'.format(info['episode'], info['title'].encode('utf-8')),
                          'url' : 'get_video_links&url='+i.get('data-id')+'&title='+info ['title']+'&season='+str(info ['season'])+'&episode='+str(info ['episode'])+'&show='+info['TVShowTitle'],
                          'image' : info['cover_url'],
                          'fanart' : info['backdrop_url'],
@@ -151,7 +151,7 @@ def get_video_links(url, title, year, season, episode, show):
                       'desc' : info['plot']})
         #addLink(i['label'], i['file'], 97, iconimage, iconimage)
         #choice = addDialog(i['label'], i['file'], 97, iconimage, iconimage)
-    select = addLink(items)
+    select = addDialog(items)
     return select
     #choice = control.selectDialog(links_list)
     #PLAYLINK('test', choice, iconimage)
@@ -198,7 +198,7 @@ def addLink(items):
 
             item = control.item(label=name)
             item.setArt({'icon' : thumb, 'thumb' : thumb, 'fanart' : fanart})
-            item.setInfo(type='Video', infoLabels={"Title" : name, 'Plot' : desc})
+            item.setInfo(type='Video', infoLabels={"Title" : name, 'Plot' : desc, 'plotoutline' : desc})
             item.setProperty('fanart_image', fanart)
             control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
         except:
@@ -238,7 +238,9 @@ def addDialog(items):
         labels = [i['name'] for i in items]
 
         select = control.selectDialog(labels)
-        if select == -1: return 'close://'
+        if select == -1:
+            select.close()
+            return 'close://'
 
         url = items[select]['url']
         url = '{}?action={}'.format(sys.argv[0], url)
