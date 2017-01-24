@@ -17,9 +17,38 @@ class source:
         self.domains = ['9anime.to']
         self.base_link = 'https://9anime.to'
         self.search_link = '/search?keyword=%s'
+        self.episode_link = '/watch/%s.%s/%s'
 
     def tvshow(self, imdb, tvdb, tvshowtitle, year):
-        pass
+        try:
+            print('in tvshow({},\n {},\n {},\n {},\n {})'.format(self, imdb, tvdb, tvshowtitle, year))
+            r = 'search/tvdb/{}?type=show&extended=full'.format(tvdb)
+            r = json.loads(trakt.getTrakt(r))
+            print(r)
+            if not r:
+                print('r was not?')
+                return '0'
+
+            print('doing this d thing?')
+            d = r[0]['show']['genre']
+            print(d)
+            if not ('anime' in d or 'animation' in d): return '0'
+
+            tv_maze = tvmaze.tvMaze()
+            tvshowtitle = tv_maze.showLookup('thetvdb', tvdb)
+            tvshowtitle = tvshowtitle['name']
+
+            t = cleantitle.get(tvshowtitle)
+
+            q = self.search_link % (urllib.quote_plus(tvshowtitle))
+            q = urlparse.urljoin(self.base_link, q)
+
+            r = client.request(q)
+            r = r.decode('iso-8859-1').encode('utf-8')
+
+            print(r)
+        except:
+            return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         pass
@@ -28,7 +57,7 @@ class source:
         pass
 
     def resolve(self, url):
-        return directstream.googlepass(url) # Probably want to change this?????
+        pass
 
 
 # def get_genres(url):

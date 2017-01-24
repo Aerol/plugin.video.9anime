@@ -29,6 +29,7 @@
 		<setting id="bookmarks" type="bool" label="32344" default="true" />
 	</category>
 	<category label="32345">
+		<setting id="provider.9anime" type="bool" label="9anime" default="true" />
 		<setting id="provider.afdah" type="bool" label="AFDAH" default="true" />
 		<setting id="provider.animeultima" type="bool" label="ANIMEULTIMA" default="true" />
 		<setting id="provider.bmoviez" type="bool" label="BMOVIEZ" default="true" />

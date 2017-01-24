@@ -35,7 +35,7 @@ class source:
         self.domains = ['gogoanimemobile.com', 'gogoanimemobile.net', 'gogoanime.io']
         self.base_link = 'http://ww1.gogoanime.io'
         self.search_link = '/search.html?keyword=%s'
-        self.episode_link = '/%s-episode-%s'
+        self.episode_link = '/watch/%s'
 
 
     def tvshow(self, imdb, tvdb, tvshowtitle, year):
