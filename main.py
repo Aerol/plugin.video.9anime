@@ -48,9 +48,8 @@ def get_genres(url):
                   'sports' : 'Sports', 'super-power' : 'Super Power',
                   'supernatural' : 'Supernatural', 'thriller' : 'Thriller',
                   'vampire' : 'Vampire', 'yaoi' : 'Yaoi', 'yuri' : 'Yuri'}
-        print(url)
+
         for i in genres:
-                #addDir(genres[i], 'get_genre&url='+_domain_url+'genre/'+i, i, 'DefaultTvShows.png', 'DefaultTvShows.png')
                 navigator.navigator().addDirectoryItem(genres[i], 'get_genre&url='+url+'&name='+i, 'genres.pg', 'DefaultTvShows.png')
         navigator.navigator().endDirectory()
 
