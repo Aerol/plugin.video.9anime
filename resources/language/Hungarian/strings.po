@@ -6,644 +6,644 @@ msgstr ""
 
 msgctxt "#32001"
 msgid "Movies"
-msgstr ""
+msgstr "Filmek"
 
 msgctxt "#32002"
 msgid "TV Shows"
-msgstr ""
+msgstr "Sorozatok"
 
 msgctxt "#32003"
 msgid "My Movies"
-msgstr ""
+msgstr "Kedvenc filmek"
 
 msgctxt "#32004"
 msgid "My TV Shows"
-msgstr ""
+msgstr "Kedvenc sorozatok"
 
 msgctxt "#32005"
 msgid "New Movies"
-msgstr ""
+msgstr "Legújabb filmek"
 
 msgctxt "#32006"
 msgid "New Episodes"
-msgstr ""
+msgstr "Legújabb epizódok"
 
 msgctxt "#32007"
 msgid "Channels"
-msgstr ""
+msgstr "Csatornák"
 
 msgctxt "#32008"
 msgid "Tools"
-msgstr ""
+msgstr "Eszközök"
 
 msgctxt "#32009"
 msgid "Downloads"
-msgstr ""
+msgstr "Letöltések"
 
 msgctxt "#32010"
 msgid "Search"
-msgstr ""
+msgstr "Keresés"
 
 msgctxt "#32011"
 msgid "Genres"
-msgstr ""
+msgstr "Műfajok"
 
 msgctxt "#32012"
 msgid "Year"
-msgstr ""
+msgstr "Évszámok"
 
 msgctxt "#32013"
 msgid "People"
-msgstr ""
+msgstr "Színészek"
 
 msgctxt "#32014"
 msgid "Languages"
-msgstr ""
+msgstr "Nyelvek"
 
 msgctxt "#32015"
 msgid "Certificates"
-msgstr ""
+msgstr "Korhatár-besorolások"
 
 msgctxt "#32016"
 msgid "Networks"
-msgstr ""
+msgstr "Televíziótársaságok"
 
 msgctxt "#32017"
 msgid "People Watching"
-msgstr ""
+msgstr "Sokan nézik"
 
 msgctxt "#32018"
 msgid "Most Popular"
-msgstr ""
+msgstr "Legnépszerűbb"
 
 msgctxt "#32019"
 msgid "Most Voted"
-msgstr ""
+msgstr "Legtöbb szavazatot kapott"
 
 msgctxt "#32020"
 msgid "Box Office"
-msgstr ""
+msgstr "Legnagyobb bevételek"
 
 msgctxt "#32021"
 msgid "Oscar Winners"
-msgstr ""
+msgstr "Oscar-nyertesek"
 
 msgctxt "#32022"
 msgid "In Theaters"
-msgstr ""
+msgstr "Jelenleg a mozikban"
 
 msgctxt "#32023"
 msgid "Highly Rated"
-msgstr ""
+msgstr "Magasan értékelt"
 
 msgctxt "#32024"
 msgid "Airing today"
-msgstr ""
+msgstr "Ma vetítik"
 
 msgctxt "#32025"
 msgid "Returning TV Shows"
-msgstr ""
+msgstr "Visszatérő sorozatok"
 
 msgctxt "#32026"
 msgid "New TV Shows"
-msgstr ""
+msgstr "Új sorozatok"
 
 msgctxt "#32027"
 msgid "TV Calendar"
-msgstr ""
+msgstr "TV naptár"
 
 msgctxt "#32028"
 msgid "People Search"
-msgstr ""
+msgstr "Keresés színészre"
 
 msgctxt "#32029"
 msgid "People (Movies)"
-msgstr ""
+msgstr "Színészek (Filmek)"
 
 msgctxt "#32030"
 msgid "People (TV)"
-msgstr ""
+msgstr "Színészek (Sorozatok)"
 
 msgctxt "#32031"
 msgid "Discover"
-msgstr ""
+msgstr "Böngészés"
 
 msgctxt "#32032"
 msgid "Collection"
-msgstr ""
+msgstr "Gyűjtemény"
 
 msgctxt "#32033"
 msgid "Watchlist"
-msgstr ""
+msgstr "Figyelőlista"
 
 msgctxt "#32034"
 msgid "IMDb"
-msgstr ""
+msgstr "IMDb"
 
 msgctxt "#32035"
 msgid "Featured"
-msgstr ""
+msgstr "Ajánlott"
 
 msgctxt "#32036"
 msgid "History"
-msgstr ""
+msgstr "Előzmények"
 
 msgctxt "#32037"
 msgid "Progress"
-msgstr ""
+msgstr "Előrehaladás"
 
 msgctxt "#32038"
 msgid "Episodes"
-msgstr ""
+msgstr "Epizódok"
 
 msgctxt "#32039"
 msgid "Movie Lists"
-msgstr ""
+msgstr "Filmes listák"
 
 msgctxt "#32040"
 msgid "TV Show Lists"
-msgstr ""
+msgstr "Sorozat listák"
 
 msgctxt "#32041"
 msgid "Episode Lists"
-msgstr ""
+msgstr "Epizódlisták"
 
 msgctxt "#32042"
 msgid "No Trakt or IMDb account found."
-msgstr ""
+msgstr "Nem található Trakt vagy IMDb fiók."
 
 msgctxt "#32043"
 msgid "[B]SETTINGS[/B] : General"
-msgstr ""
+msgstr "[B]BEÁLLÍTÁSOK[/B] : Általános"
 
 msgctxt "#32044"
 msgid "[B]SETTINGS[/B] : Accounts"
-msgstr ""
+msgstr "[B]BEÁLLÍTÁSOK[/B] : Fiókok"
 
 msgctxt "#32045"
 msgid "[B]SETTINGS[/B] : Playback"
-msgstr ""
+msgstr "[B]BEÁLLÍTÁSOK[/B] : Lejátszás"
 
 msgctxt "#32046"
 msgid "[B]SETTINGS[/B] : Subtitles"
-msgstr ""
+msgstr "[B]BEÁLLÍTÁSOK[/B] : Feliratok"
 
 msgctxt "#32047"
 msgid "[B]SETTINGS[/B] : Providers"
-msgstr ""
+msgstr "[B]BEÁLLÍTÁSOK[/B] : Kiszolgálók"
 
 msgctxt "#32048"
 msgid "[B]EXODUS[/B] : Downloads"
-msgstr ""
+msgstr "[B]EXODUS[/B] : Letöltések"
 
 msgctxt "#32049"
 msgid "[B]EXODUS[/B] : Viewtypes"
-msgstr ""
+msgstr "[B]EXODUS[/B] : Nézet"
 
 msgctxt "#32050"
 msgid "[B]EXODUS[/B] : Clear providers..."
-msgstr ""
+msgstr "[B]EXODUS[/B] : Kiszolgálók megtisztítása..."
 
 msgctxt "#32051"
 msgid "[B]EXODUS[/B] : Clear metadata..."
-msgstr ""
+msgstr "[B]EXODUS[/B] : Metaadatok megtisztítása..."
 
 msgctxt "#32052"
 msgid "[B]EXODUS[/B] : Clear cache..."
-msgstr ""
+msgstr "[B]EXODUS[/B] : Gyorsítótár megtisztítása..."
 
 msgctxt "#32053"
 msgid "[I]Next Page[/I]"
-msgstr ""
+msgstr "[I]Következő oldal[/I]"
 
 msgctxt "#32054"
 msgid "Seasons"
-msgstr ""
+msgstr "Évadok"
 
 msgctxt "#32055"
 msgid "Season"
-msgstr ""
+msgstr "Évad"
 
 msgctxt "#32056"
 msgid "Are you sure?"
-msgstr ""
+msgstr "Biztos benne?"
 
 msgctxt "#32057"
 msgid "Process Complete"
-msgstr ""
+msgstr "Folyamat befejeződött"
 
 msgctxt "#32058"
 msgid "This will slow down things until they are re-cached!"
-msgstr ""
+msgstr "Ez lassítja a működést ideiglenesen, amíg újból be kerülnek a dolgok a gyorsítótárba!"
 
 msgctxt "#32059"
 msgid "CLICK HERE TO SAVE VIEW"
-msgstr ""
+msgstr "A BEÁLLÍTÁS MENTÉSÉHEZ KATTINTSON IDE"
 
 msgctxt "#32060"
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "Január|Február|Március|Április|Május|Június|Július|Augusztus|Szeptember|Október|November|December"
 
 msgctxt "#32061"
 msgid "Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday"
-msgstr ""
+msgstr "Hétfő|Kedd|Szerda|Csütörtök|Péntek|Szombat|Vasárnap"
 
 msgctxt "#32062"
 msgid "[B]%s[/B] : %s"
-msgstr ""
+msgstr "[B]%s[/B] : %s"
 
 msgctxt "#32063"
 msgid "Play using..."
-msgstr ""
+msgstr "Egyéb lejátszóval..."
 
 msgctxt "#32064"
 msgid "Auto Play"
-msgstr ""
+msgstr "Automatikus lejátszás"
 
 msgctxt "#32065"
 msgid "Queue item"
-msgstr ""
+msgstr "Lejátszási sorba tesz"
 
 msgctxt "#32066"
 msgid "Watched in Exodus"
-msgstr ""
+msgstr "Megnézettként megjelöl (Exodus)"
 
 msgctxt "#32067"
 msgid "Unwatched in Exodus"
-msgstr ""
+msgstr "Nem látottként megjelöl (Exodus)"
 
 msgctxt "#32068"
 msgid "Watched in Trakt"
-msgstr ""
+msgstr "Megnézettként megjelöl (Trakt)"
 
 msgctxt "#32069"
 msgid "Unwatched in Trakt"
-msgstr ""
+msgstr "Nem látottként megjelöl (Trakt)"
 
 msgctxt "#32070"
 msgid "Trakt Manager"
-msgstr ""
+msgstr "Trakt Kezelő"
 
 msgctxt "#32071"
 msgid "Browse Series"
-msgstr ""
+msgstr "Sorozatok megtekintése"
 
 msgctxt "#32072"
 msgid "Refresh"
-msgstr ""
+msgstr "Frissítés"
 
 msgctxt "#32073"
 msgid "[B]HELP[/B] : www.tvaddons.ag"
-msgstr ""
+msgstr "[B]SÚGÓ[/B] : www.tvaddons.ag"
 
 msgctxt "#32074"
 msgid "[B]HELP[/B]"
-msgstr ""
+msgstr "[B]SÚGÓ[/B]"
 
 msgctxt "#32301"
 msgid "Enabled"
-msgstr ""
+msgstr "Engedélyezve"
 
 msgctxt "#32302"
 msgid "Disabled"
-msgstr ""
+msgstr "Letiltva"
 
 msgctxt "#32303"
 msgid "User"
-msgstr ""
+msgstr "Felhasználó"
 
 msgctxt "#32304"
 msgid "Email"
-msgstr ""
+msgstr "E-mail cím"
 
 msgctxt "#32305"
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgctxt "#32306"
 msgid "Authorization..."
-msgstr ""
+msgstr "Engedélyezés..."
 
 msgctxt "#32307"
 msgid "Password"
-msgstr ""
+msgstr "Jelszó"
 
 msgctxt "#32308"
 msgid "PIN"
-msgstr ""
+msgstr "PIN"
 
 msgctxt "#32309"
 msgid "API"
-msgstr ""
+msgstr "API"
 
 msgctxt "#32310"
 msgid "General"
-msgstr ""
+msgstr "Általános"
 
 msgctxt "#32311"
 msgid "Appearance"
-msgstr ""
+msgstr "Megjelenés"
 
 msgctxt "#32312"
 msgid "Providers Timeout"
-msgstr ""
+msgstr "Kiszolgálók időtúllépése"
 
 msgctxt "#32313"
 msgid "Indicators"
-msgstr ""
+msgstr "Tartalmak"
 
 msgctxt "#32314"
 msgid "Local"
-msgstr ""
+msgstr "Helyi"
 
 msgctxt "#32315"
 msgid "Trakt"
-msgstr ""
+msgstr "Trakt"
 
 msgctxt "#32316"
 msgid "Info Language"
-msgstr ""
+msgstr "Info nyelve"
 
 msgctxt "#32317"
 msgid "Flatten TV seasons"
-msgstr ""
+msgstr "Sorozatévadok szűkítése"
 
 msgctxt "#32318"
 msgid "Enable Fanart"
-msgstr ""
+msgstr "Fanart engedélyezése"
 
 msgctxt "#32319"
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 msgctxt "#32320"
 msgid "New Movies"
-msgstr ""
+msgstr "Legújabb filmek"
 
 msgctxt "#32321"
 msgid "Featured"
-msgstr ""
+msgstr "Ajánlott"
 
 msgctxt "#32322"
 msgid "People Watching"
-msgstr ""
+msgstr "Népszerű"
 
 msgctxt "#32323"
 msgid "Most Popular"
-msgstr ""
+msgstr "Legnépszerűbb"
 
 msgctxt "#32324"
 msgid "In Theaters"
-msgstr ""
+msgstr "Jelenleg a mozikban"
 
 msgctxt "#32325"
 msgid "New Episodes"
-msgstr ""
+msgstr "Legújabb sorozatok"
 
 msgctxt "#32326"
 msgid "Episodes"
-msgstr ""
+msgstr "Epizódok"
 
 msgctxt "#32327"
 msgid "Trakt Progress"
-msgstr ""
+msgstr "Trakt Előrehaladás"
 
 msgctxt "#32328"
 msgid "Trakt Episodes"
-msgstr ""
+msgstr "Trakt Epizódok"
 
 msgctxt "#32329"
 msgid "My Lists"
-msgstr ""
+msgstr "Listáim"
 
 msgctxt "#32330"
 msgid "Playback"
-msgstr ""
+msgstr "Lejátszás"
 
 msgctxt "#32331"
 msgid "Default action"
-msgstr ""
+msgstr "Tárhely kiválasztó"
 
 msgctxt "#32332"
 msgid "Dialog"
-msgstr ""
+msgstr "Ablak"
 
 msgctxt "#32333"
 msgid "Directory"
-msgstr ""
+msgstr "Mappa"
 
 msgctxt "#32334"
 msgid "Auto Play"
-msgstr ""
+msgstr "Automatikus lejátszás"
 
 msgctxt "#32335"
 msgid "Progress Dialog"
-msgstr ""
+msgstr "Folyamat párbeszédablak"
 
 msgctxt "#32336"
 msgid "Foreground"
-msgstr ""
+msgstr "Normál"
 
 msgctxt "#32337"
 msgid "Background"
-msgstr ""
+msgstr "Minimalizál"
 
 msgctxt "#32338"
 msgid "File Hosting Filters"
-msgstr ""
+msgstr "Tárhely szűrők"
 
 msgctxt "#32339"
 msgid "Max Quality"
-msgstr ""
+msgstr "Legjobb minőség"
 
 msgctxt "#32340"
 msgid "SD Hosters in Auto Play"
-msgstr ""
+msgstr "Kényszerített SD lejátszás Automatikus lejátszás módban"
 
 msgctxt "#32341"
 msgid "Hosters with captchas"
-msgstr ""
+msgstr "Tárhelyek captchaval"
 
 msgctxt "#32342"
 msgid "Sort by Provider"
-msgstr ""
+msgstr "Rendezés kiszolgálók szerint"
 
 msgctxt "#32343"
 msgid "When playback starts..."
-msgstr ""
+msgstr "Lejátszás elindulásakor..."
 
 msgctxt "#32344"
 msgid "Resume Playback"
-msgstr ""
+msgstr "Lejátszás folytatása"
 
 msgctxt "#32345"
 msgid "Providers"
-msgstr ""
+msgstr "Kiszolgálók"
 
 msgctxt "#32346"
 msgid "Accounts"
-msgstr ""
+msgstr "Fiókok"
 
 msgctxt "#32347"
 msgid "Downloads"
-msgstr ""
+msgstr "Letöltések"
 
 msgctxt "#32348"
 msgid "Enable downloads"
-msgstr ""
+msgstr "Letöltések engedélyezése"
 
 msgctxt "#32349"
 msgid "Movies"
-msgstr ""
+msgstr "Filmek"
 
 msgctxt "#32350"
 msgid "TV"
-msgstr ""
+msgstr "Sorozatok"
 
 msgctxt "#32351"
 msgid "Downloading features are disabled by default."
-msgstr ""
+msgstr "A letöltések alapértelmezés szerint le vannak tiltva."
 
 msgctxt "#32352"
 msgid "Set up your download folders in order to enable them."
-msgstr ""
+msgstr "Állítsd be a letöltési mappáidat, annak érdekében hogy engedélyezd őket."
 
 msgctxt "#32353"
 msgid "Subtitles"
-msgstr ""
+msgstr "Feliratok"
 
 msgctxt "#32354"
 msgid "Enable subtitles"
-msgstr ""
+msgstr "Feliratok engedélyezése"
 
 msgctxt "#32355"
 msgid "Convert subtitles to UTF-8"
-msgstr ""
+msgstr "Feliratok konvertálása UTF-8 formátumba"
 
 msgctxt "#32356"
 msgid "Primary Language"
-msgstr ""
+msgstr "Elsődleges nyelv"
 
 msgctxt "#32357"
 msgid "Secondary Language"
-msgstr ""
+msgstr "Másodlagos nyelv"
 
 msgctxt "#32358"
 msgid "Subtitles could be unavailable or out of sync."
-msgstr ""
+msgstr "A feliratok egyes esetekben nem elérhetőek vagy nincsenek szinkronban."
 
 msgctxt "#32359"
 msgid "In that case use your own subtitles."
-msgstr ""
+msgstr "Ebben az esetben használj saját feliratokat."
 
 msgctxt "#32360"
 msgid "Providers Language"
-msgstr ""
+msgstr "Kiszolgálók nyelve"
 
 msgctxt "#32401"
 msgid "No stream available"
-msgstr ""
+msgstr "Nincs elérhető adatfolyam"
 
 msgctxt "#32402"
 msgid "Playback outside Exodus is not allowed"
-msgstr ""
+msgstr "Exoduson kívüli lejátszás nem engedélyezett"
 
 msgctxt "#32403"
 msgid "Download"
-msgstr ""
+msgstr "Letöltés"
 
 msgctxt "#32404"
 msgid "Time elapsed: %s seconds"
-msgstr ""
+msgstr "Eltelt idő: %s másodperc"
 
 msgctxt "#32405"
 msgid "%s seconds"
-msgstr ""
+msgstr "%s másodperc"
 
 msgctxt "#32406"
 msgid "Remaining providers: %s"
-msgstr ""
+msgstr "Hátralévő kiszolgálók: %s"
 
 msgctxt "#32407"
 msgid "Are you sure?"
-msgstr ""
+msgstr "Biztos benne?"
 
 msgctxt "#32408"
 msgid "Process Complete"
-msgstr ""
+msgstr "Folyamat befejeződött"
 
 msgctxt "#32501"
 msgid "Start from beginning"
-msgstr ""
+msgstr "Lejátszás az elejéről"
 
 msgctxt "#32502"
 msgid "Resume from %s"
-msgstr ""
+msgstr "Folytatás innen %s"
 
 msgctxt "#32503"
 msgid "Resume"
-msgstr ""
+msgstr "Folytatás"
 
 msgctxt "#32511"
 msgid "An account already exists."
-msgstr ""
+msgstr "Egy fiók már létezik"
 
 msgctxt "#32512"
 msgid "Do you want to reset?"
-msgstr ""
+msgstr "Szeretné visszaállítani?"
 
 msgctxt "#32513"
 msgid "1) Visit : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "1) Látogassa meg : [COLOR skyblue]%s[/COLOR]"
 
 msgctxt "#32514"
 msgid "2) When prompted enter : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "2) Amikor kéri írja be ezt : [COLOR skyblue]%s[/COLOR]"
 
 msgctxt "#32515"
 msgid "Trakt Manager"
-msgstr ""
+msgstr "Trakt Kezelő"
 
 msgctxt "#32516"
 msgid "Add to [B]Collection[/B]"
-msgstr ""
+msgstr "Hozzáadás gyűjteményhez"
 
 msgctxt "#32517"
 msgid "Remove from [B]Collection[/B]"
-msgstr ""
+msgstr "Eltávolítás gyűjteményből"
 
 msgctxt "#32518"
 msgid "Add to [B]Watchlist[/B]"
-msgstr ""
+msgstr "Hozzáadás figyelőlistához"
 
 msgctxt "#32519"
 msgid "Remove from [B]Watchlist[/B]"
-msgstr ""
+msgstr "Eltávolítás figyelőlistából"
 
 msgctxt "#32520"
 msgid "Add to [B]new List[/B]"
-msgstr ""
+msgstr "Hozzáadás új listához"
 
 msgctxt "#32521"
 msgid "Add to [B]%s[/B]"
-msgstr ""
+msgstr "Hozzáadás ehhez [B]%s[/B]"
 
 msgctxt "#32522"
 msgid "Remove from [B]%s[/B]"
-msgstr ""
+msgstr "Remove from [B]%s[/B]"
 
 msgctxt "#32531"
 msgid "An account already exists."
-msgstr ""
+msgstr "Egy fiók már létezik"
 
 msgctxt "#32532"
 msgid "Do you want to reset?"
-msgstr ""
+msgstr "Szeretné visszaállítani?"
 
 msgctxt "#32533"
 msgid "1) Visit : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "1) Látogassa meg : [COLOR skyblue]%s[/COLOR]"
 
 msgctxt "#32534"
 msgid "2) When prompted enter : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "2) Amikor kéri írja be ezt : [COLOR skyblue]%s[/COLOR]"

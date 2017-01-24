@@ -6,644 +6,644 @@ msgstr ""
 
 msgctxt "#32001"
 msgid "Movies"
-msgstr ""
+msgstr "Филмови"
 
 msgctxt "#32002"
 msgid "TV Shows"
-msgstr ""
+msgstr "Серије"
 
 msgctxt "#32003"
 msgid "My Movies"
-msgstr ""
+msgstr "Моји филмови"
 
 msgctxt "#32004"
 msgid "My TV Shows"
-msgstr ""
+msgstr "Моје серије"
 
 msgctxt "#32005"
 msgid "New Movies"
-msgstr ""
+msgstr "Нови филмови"
 
 msgctxt "#32006"
 msgid "New Episodes"
-msgstr ""
+msgstr "Нове епизоде"
 
 msgctxt "#32007"
 msgid "Channels"
-msgstr ""
+msgstr "Канали"
 
 msgctxt "#32008"
 msgid "Tools"
-msgstr ""
+msgstr "Алатке"
 
 msgctxt "#32009"
 msgid "Downloads"
-msgstr ""
+msgstr "Преузимања"
 
 msgctxt "#32010"
 msgid "Search"
-msgstr ""
+msgstr "Претрага"
 
 msgctxt "#32011"
 msgid "Genres"
-msgstr ""
+msgstr "Жанрови"
 
 msgctxt "#32012"
 msgid "Year"
-msgstr ""
+msgstr "Године"
 
 msgctxt "#32013"
 msgid "People"
-msgstr ""
+msgstr "Особе"
 
 msgctxt "#32014"
 msgid "Languages"
-msgstr ""
+msgstr "Језици"
 
 msgctxt "#32015"
 msgid "Certificates"
-msgstr ""
+msgstr "Сертификати"
 
 msgctxt "#32016"
 msgid "Networks"
-msgstr ""
+msgstr "Мреже"
 
 msgctxt "#32017"
 msgid "People Watching"
-msgstr ""
+msgstr "Тренутно се гледа"
 
 msgctxt "#32018"
 msgid "Most Popular"
-msgstr ""
+msgstr "Најпопуларније"
 
 msgctxt "#32019"
 msgid "Most Voted"
-msgstr ""
+msgstr "Највише гласова"
 
 msgctxt "#32020"
 msgid "Box Office"
-msgstr ""
+msgstr "Са највећом зарадом"
 
 msgctxt "#32021"
 msgid "Oscar Winners"
-msgstr ""
+msgstr "Добитници Оскара"
 
 msgctxt "#32022"
 msgid "In Theaters"
-msgstr ""
+msgstr "У биоскопима"
 
 msgctxt "#32023"
 msgid "Highly Rated"
-msgstr ""
+msgstr "Најбоље оцењено"
 
 msgctxt "#32024"
 msgid "Airing today"
-msgstr ""
+msgstr "Данас се емитује"
 
 msgctxt "#32025"
 msgid "Returning TV Shows"
-msgstr ""
+msgstr "Серије у повратку"
 
 msgctxt "#32026"
 msgid "New TV Shows"
-msgstr ""
+msgstr "Нове серије"
 
 msgctxt "#32027"
 msgid "TV Calendar"
-msgstr ""
+msgstr "Календар серија"
 
 msgctxt "#32028"
 msgid "People Search"
-msgstr ""
+msgstr "Претрага особа"
 
 msgctxt "#32029"
 msgid "People (Movies)"
-msgstr ""
+msgstr "Особе (филмови)"
 
 msgctxt "#32030"
 msgid "People (TV)"
-msgstr ""
+msgstr "Особе (серије)"
 
 msgctxt "#32031"
 msgid "Discover"
-msgstr ""
+msgstr "Откривање"
 
 msgctxt "#32032"
 msgid "Collection"
-msgstr ""
+msgstr "Колекција"
 
 msgctxt "#32033"
 msgid "Watchlist"
-msgstr ""
+msgstr "Листа за гледање"
 
 msgctxt "#32034"
 msgid "IMDb"
-msgstr ""
+msgstr "IMDb"
 
 msgctxt "#32035"
 msgid "Featured"
-msgstr ""
+msgstr "Истакнуто"
 
 msgctxt "#32036"
 msgid "History"
-msgstr ""
+msgstr "Историја"
 
 msgctxt "#32037"
 msgid "Progress"
-msgstr ""
+msgstr "Напредак"
 
 msgctxt "#32038"
 msgid "Episodes"
-msgstr ""
+msgstr "Епизоде"
 
 msgctxt "#32039"
 msgid "Movie Lists"
-msgstr ""
+msgstr "Листе филмова"
 
 msgctxt "#32040"
 msgid "TV Show Lists"
-msgstr ""
+msgstr "Листе серија"
 
 msgctxt "#32041"
 msgid "Episode Lists"
-msgstr ""
+msgstr "Листе епизода"
 
 msgctxt "#32042"
 msgid "No Trakt or IMDb account found."
-msgstr ""
+msgstr "Није пронађен Trakt нити IMDb налог."
 
 msgctxt "#32043"
 msgid "[B]SETTINGS[/B] : General"
-msgstr ""
+msgstr "[B]ПОДЕШАВАЊА[/B] : Општа"
 
 msgctxt "#32044"
 msgid "[B]SETTINGS[/B] : Accounts"
-msgstr ""
+msgstr "[B]ПОДЕШАВАЊА[/B] : Налози"
 
 msgctxt "#32045"
 msgid "[B]SETTINGS[/B] : Playback"
-msgstr ""
+msgstr "[B]ПОДЕШАВАЊА[/B] : Репродукција"
 
 msgctxt "#32046"
 msgid "[B]SETTINGS[/B] : Subtitles"
-msgstr ""
+msgstr "[B]ПОДЕШАВАЊА[/B] : Титлови"
 
 msgctxt "#32047"
 msgid "[B]SETTINGS[/B] : Providers"
-msgstr ""
+msgstr "[B]ПОДЕШАВАЊА[/B] : Извори"
 
 msgctxt "#32048"
 msgid "[B]EXODUS[/B] : Downloads"
-msgstr ""
+msgstr "[B]EXODUS[/B] : Преузимања"
 
 msgctxt "#32049"
 msgid "[B]EXODUS[/B] : Viewtypes"
-msgstr ""
+msgstr "[B]EXODUS[/B] : Врсте приказа"
 
 msgctxt "#32050"
 msgid "[B]EXODUS[/B] : Clear providers..."
-msgstr ""
+msgstr "[B]EXODUS[/B] : Очисти добављаче…"
 
 msgctxt "#32051"
 msgid "[B]EXODUS[/B] : Clear metadata..."
-msgstr ""
+msgstr "[B]EXODUS[/B] : Очисти мета-податке…"
 
 msgctxt "#32052"
 msgid "[B]EXODUS[/B] : Clear cache..."
-msgstr ""
+msgstr "[B]EXODUS[/B] : Очисти кеш…"
 
 msgctxt "#32053"
 msgid "[I]Next Page[/I]"
-msgstr ""
+msgstr "[I]Следећа страница[/I]"
 
 msgctxt "#32054"
 msgid "Seasons"
-msgstr ""
+msgstr "Сезоне"
 
 msgctxt "#32055"
 msgid "Season"
-msgstr ""
+msgstr "Сезона"
 
 msgctxt "#32056"
 msgid "Are you sure?"
-msgstr ""
+msgstr "Да ли сте сигурни?"
 
 msgctxt "#32057"
 msgid "Process Complete"
-msgstr ""
+msgstr "Поступак завршен"
 
 msgctxt "#32058"
 msgid "This will slow down things until they are re-cached!"
-msgstr ""
+msgstr "Ово ће успорити ствари док се поново не кеширају!"
 
 msgctxt "#32059"
 msgid "CLICK HERE TO SAVE VIEW"
-msgstr ""
+msgstr "КЛИКНИТЕ ОВДЕ ДА БИСТЕ САЧУВАЛИ ПРИКАЗ"
 
 msgctxt "#32060"
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "јануар|фебруар|март|април|мај|јун|јул|август|септембар|октобар|новембар|децембар"
 
 msgctxt "#32061"
 msgid "Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday"
-msgstr ""
+msgstr "понедељак|уторак|среда|четвртак|петак|субота|недеља"
 
 msgctxt "#32062"
 msgid "[B]%s[/B] : %s"
-msgstr ""
+msgstr "[B]%s[/B] : %s"
 
 msgctxt "#32063"
 msgid "Play using..."
-msgstr ""
+msgstr "Репродукуј користећи…"
 
 msgctxt "#32064"
 msgid "Auto Play"
-msgstr ""
+msgstr "Аутоматска репродукција"
 
 msgctxt "#32065"
 msgid "Queue item"
-msgstr ""
+msgstr "Додај у ред"
 
 msgctxt "#32066"
 msgid "Watched in Exodus"
-msgstr ""
+msgstr "Одгледано у Exodus-у"
 
 msgctxt "#32067"
 msgid "Unwatched in Exodus"
-msgstr ""
+msgstr "Неодгледано у Exodus-у"
 
 msgctxt "#32068"
 msgid "Watched in Trakt"
-msgstr ""
+msgstr "Одгледано у Trakt-у"
 
 msgctxt "#32069"
 msgid "Unwatched in Trakt"
-msgstr ""
+msgstr "Неодгледано у Trakt-у"
 
 msgctxt "#32070"
 msgid "Trakt Manager"
-msgstr ""
+msgstr "Trakt менаџер"
 
 msgctxt "#32071"
 msgid "Browse Series"
-msgstr ""
+msgstr "Преглед серија"
 
 msgctxt "#32072"
 msgid "Refresh"
-msgstr ""
+msgstr "Освежи"
 
 msgctxt "#32073"
 msgid "[B]HELP[/B] : www.tvaddons.ag"
-msgstr ""
+msgstr "[B]ПОМОЋ[/B] : www.tvaddons.ag"
 
 msgctxt "#32074"
 msgid "[B]HELP[/B]"
-msgstr ""
+msgstr "[B]ПОМОЋ[/B]"
 
 msgctxt "#32301"
 msgid "Enabled"
-msgstr ""
+msgstr "Омогућено"
 
 msgctxt "#32302"
 msgid "Disabled"
-msgstr ""
+msgstr "Онемогућено"
 
 msgctxt "#32303"
 msgid "User"
-msgstr ""
+msgstr "Корисник"
 
 msgctxt "#32304"
 msgid "Email"
-msgstr ""
+msgstr "Имејл"
 
 msgctxt "#32305"
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgctxt "#32306"
 msgid "Authorization..."
-msgstr ""
+msgstr "Ауторизација…"
 
 msgctxt "#32307"
 msgid "Password"
-msgstr ""
+msgstr "Лозинка"
 
 msgctxt "#32308"
 msgid "PIN"
-msgstr ""
+msgstr "PIN"
 
 msgctxt "#32309"
 msgid "API"
-msgstr ""
+msgstr "API"
 
 msgctxt "#32310"
 msgid "General"
-msgstr ""
+msgstr "Општа"
 
 msgctxt "#32311"
 msgid "Appearance"
-msgstr ""
+msgstr "Изглед"
 
 msgctxt "#32312"
 msgid "Providers Timeout"
-msgstr ""
+msgstr "Време чекања на добављаче"
 
 msgctxt "#32313"
 msgid "Indicators"
-msgstr ""
+msgstr "Индикатори"
 
 msgctxt "#32314"
 msgid "Local"
-msgstr ""
+msgstr "Локални"
 
 msgctxt "#32315"
 msgid "Trakt"
-msgstr ""
+msgstr "Trakt"
 
 msgctxt "#32316"
 msgid "Info Language"
-msgstr ""
+msgstr "Језик на информација"
 
 msgctxt "#32317"
 msgid "Flatten TV seasons"
-msgstr ""
+msgstr "Обједини сезоне серија"
 
 msgctxt "#32318"
 msgid "Enable Fanart"
-msgstr ""
+msgstr "Омогући уметност љубитеља"
 
 msgctxt "#32319"
 msgid "Menu"
-msgstr ""
+msgstr "Мени"
 
 msgctxt "#32320"
 msgid "New Movies"
-msgstr ""
+msgstr "Нови филмови"
 
 msgctxt "#32321"
 msgid "Featured"
-msgstr ""
+msgstr "Истакнуто"
 
 msgctxt "#32322"
 msgid "People Watching"
-msgstr ""
+msgstr "Тренутно се гледа"
 
 msgctxt "#32323"
 msgid "Most Popular"
-msgstr ""
+msgstr "Најпопуларније"
 
 msgctxt "#32324"
 msgid "In Theaters"
-msgstr ""
+msgstr "У биоскопима"
 
 msgctxt "#32325"
 msgid "New Episodes"
-msgstr ""
+msgstr "Нове епизоде"
 
 msgctxt "#32326"
 msgid "Episodes"
-msgstr ""
+msgstr "Епизоде"
 
 msgctxt "#32327"
 msgid "Trakt Progress"
-msgstr ""
+msgstr "Trakt напредак"
 
 msgctxt "#32328"
 msgid "Trakt Episodes"
-msgstr ""
+msgstr "Trakt епизоде"
 
 msgctxt "#32329"
 msgid "My Lists"
-msgstr ""
+msgstr "Моје листе"
 
 msgctxt "#32330"
 msgid "Playback"
-msgstr ""
+msgstr "Репродукција"
 
 msgctxt "#32331"
 msgid "Default action"
-msgstr ""
+msgstr "Подразумевана радња"
 
 msgctxt "#32332"
 msgid "Dialog"
-msgstr ""
+msgstr "Дијалог"
 
 msgctxt "#32333"
 msgid "Directory"
-msgstr ""
+msgstr "Директоријум"
 
 msgctxt "#32334"
 msgid "Auto Play"
-msgstr ""
+msgstr "Аутоматска репродукција"
 
 msgctxt "#32335"
 msgid "Progress Dialog"
-msgstr ""
+msgstr "Дијалог напретка"
 
 msgctxt "#32336"
 msgid "Foreground"
-msgstr ""
+msgstr "Први план"
 
 msgctxt "#32337"
 msgid "Background"
-msgstr ""
+msgstr "Позадина"
 
 msgctxt "#32338"
 msgid "File Hosting Filters"
-msgstr ""
+msgstr "Филтери хостинга датотека"
 
 msgctxt "#32339"
 msgid "Max Quality"
-msgstr ""
+msgstr "Максималан квалитет"
 
 msgctxt "#32340"
 msgid "SD Hosters in Auto Play"
-msgstr ""
+msgstr "SD хостери у аут. репрод."
 
 msgctxt "#32341"
 msgid "Hosters with captchas"
-msgstr ""
+msgstr "Хостери са уносом кодова"
 
 msgctxt "#32342"
 msgid "Sort by Provider"
-msgstr ""
+msgstr "Сортирање према добављачу"
 
 msgctxt "#32343"
 msgid "When playback starts..."
-msgstr ""
+msgstr "Када репродукција почне…"
 
 msgctxt "#32344"
 msgid "Resume Playback"
-msgstr ""
+msgstr "Настави репродукцију"
 
 msgctxt "#32345"
 msgid "Providers"
-msgstr ""
+msgstr "Добављачи"
 
 msgctxt "#32346"
 msgid "Accounts"
-msgstr ""
+msgstr "Налози"
 
 msgctxt "#32347"
 msgid "Downloads"
-msgstr ""
+msgstr "Преузимања"
 
 msgctxt "#32348"
 msgid "Enable downloads"
-msgstr ""
+msgstr "Омогући преузимања"
 
 msgctxt "#32349"
 msgid "Movies"
-msgstr ""
+msgstr "Филмови"
 
 msgctxt "#32350"
 msgid "TV"
-msgstr ""
+msgstr "Серије"
 
 msgctxt "#32351"
 msgid "Downloading features are disabled by default."
-msgstr ""
+msgstr "Функције преузимања су подразумевано онемогућене."
 
 msgctxt "#32352"
 msgid "Set up your download folders in order to enable them."
-msgstr ""
+msgstr "Подесите фасцикле за преузимање да бисте их омогућили."
 
 msgctxt "#32353"
 msgid "Subtitles"
-msgstr ""
+msgstr "Титлови"
 
 msgctxt "#32354"
 msgid "Enable subtitles"
-msgstr ""
+msgstr "Омогући титлове"
 
 msgctxt "#32355"
 msgid "Convert subtitles to UTF-8"
-msgstr ""
+msgstr "Претвори титлове у UTF-8"
 
 msgctxt "#32356"
 msgid "Primary Language"
-msgstr ""
+msgstr "Примарни језик"
 
 msgctxt "#32357"
 msgid "Secondary Language"
-msgstr ""
+msgstr "Секундарни језик"
 
 msgctxt "#32358"
 msgid "Subtitles could be unavailable or out of sync."
-msgstr ""
+msgstr "Титлови могу да буду недоступни или неусклађени."
 
 msgctxt "#32359"
 msgid "In that case use your own subtitles."
-msgstr ""
+msgstr "У том случају користите сопствене титлове."
 
 msgctxt "#32360"
 msgid "Providers Language"
-msgstr ""
+msgstr "Језик на добављаче"
 
 msgctxt "#32401"
 msgid "No stream available"
-msgstr ""
+msgstr "Није доступан ниједан стрим"
 
 msgctxt "#32402"
 msgid "Playback outside Exodus is not allowed"
-msgstr ""
+msgstr "Репродукција изван Exodus-а није дозвољена"
 
 msgctxt "#32403"
 msgid "Download"
-msgstr ""
+msgstr "Преузми"
 
 msgctxt "#32404"
 msgid "Time elapsed: %s seconds"
-msgstr ""
+msgstr "Протекло време: %s секунди"
 
 msgctxt "#32405"
 msgid "%s seconds"
-msgstr ""
+msgstr "%s секунди"
 
 msgctxt "#32406"
 msgid "Remaining providers: %s"
-msgstr ""
+msgstr "Преостали добављачи: %s"
 
 msgctxt "#32407"
 msgid "Are you sure?"
-msgstr ""
+msgstr "Да ли сте сигурни?"
 
 msgctxt "#32408"
 msgid "Process Complete"
-msgstr ""
+msgstr "Поступак завршен"
 
 msgctxt "#32501"
 msgid "Start from beginning"
-msgstr ""
+msgstr "Почни испочетка"
 
 msgctxt "#32502"
 msgid "Resume from %s"
-msgstr ""
+msgstr "Настављање од %s"
 
 msgctxt "#32503"
 msgid "Resume"
-msgstr ""
+msgstr "Настави"
 
 msgctxt "#32511"
 msgid "An account already exists."
-msgstr ""
+msgstr "Налог већ постоји."
 
 msgctxt "#32512"
 msgid "Do you want to reset?"
-msgstr ""
+msgstr "Желите ли поново да подесите?"
 
 msgctxt "#32513"
 msgid "1) Visit : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "1) Посетите: [COLOR skyblue]%s[/COLOR]"
 
 msgctxt "#32514"
 msgid "2) When prompted enter : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "2) На упит унесите: [COLOR skyblue]%s[/COLOR]"
 
 msgctxt "#32515"
 msgid "Trakt Manager"
-msgstr ""
+msgstr "Trakt менаџер"
 
 msgctxt "#32516"
 msgid "Add to [B]Collection[/B]"
-msgstr ""
+msgstr "Додај у [B]колекцију[/B]"
 
 msgctxt "#32517"
 msgid "Remove from [B]Collection[/B]"
-msgstr ""
+msgstr "Уклони из [B]колекције[/B]"
 
 msgctxt "#32518"
 msgid "Add to [B]Watchlist[/B]"
-msgstr ""
+msgstr "Додај у [B]листу за гледање[/B]"
 
 msgctxt "#32519"
 msgid "Remove from [B]Watchlist[/B]"
-msgstr ""
+msgstr "Уклони из [B]листе за гледање[/B]"
 
 msgctxt "#32520"
 msgid "Add to [B]new List[/B]"
-msgstr ""
+msgstr "Додај у [B]нову листу[/B]"
 
 msgctxt "#32521"
 msgid "Add to [B]%s[/B]"
-msgstr ""
+msgstr "Додај у [B]%s[/B]"
 
 msgctxt "#32522"
 msgid "Remove from [B]%s[/B]"
-msgstr ""
+msgstr "Уклони из [B]%s[/B]"
 
 msgctxt "#32531"
 msgid "An account already exists."
-msgstr ""
+msgstr "Налог већ постоји."
 
 msgctxt "#32532"
 msgid "Do you want to reset?"
-msgstr ""
+msgstr "Желите ли поново да подесите?"
 
 msgctxt "#32533"
 msgid "1) Visit : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "1) Посетите: [COLOR skyblue]%s[/COLOR]"
 
 msgctxt "#32534"
 msgid "2) When prompted enter : [COLOR skyblue]%s[/COLOR]"
-msgstr ""
+msgstr "2) На упит унесите: [COLOR skyblue]%s[/COLOR]"
