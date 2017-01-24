@@ -17,11 +17,11 @@ class source:
         self.domains = ['9anime.to']
         self.base_link = 'https://9anime.to'
         self.search_link = '/search?keyword=%s'
-        self.episode_link = '/watch/%s.%s/%s'
+        self.episode_link = '/watch/%s'
 
     def tvshow(self, imdb, tvdb, tvshowtitle, year):
+        print('tvshow({}, {}, {}. {}, {})'.format(self, imdb, tvdb, tvshowtitle, year))
         try:
-            print('in tvshow({},\n {},\n {},\n {},\n {})'.format(self, imdb, tvdb, tvshowtitle, year))
             r = 'search/tvdb/{}?type=show&extended=full'.format(tvdb)
             r = json.loads(trakt.getTrakt(r))
             print(r)
@@ -29,9 +29,8 @@ class source:
                 print('r was not?')
                 return '0'
 
-            print('doing this d thing?')
-            d = r[0]['show']['genre']
-            print(d)
+            d = r[0]['show']['genres']
+
             if not ('anime' in d or 'animation' in d): return '0'
 
             tv_maze = tvmaze.tvMaze()
@@ -44,23 +43,47 @@ class source:
             q = urlparse.urljoin(self.base_link, q)
 
             r = client.request(q)
-            r = r.decode('iso-8859-1').encode('utf-8')
-
             print(r)
+            r = r.decode('iso-8859-1').encode('utf-8')
+            print(r)
+            #soup = BeautifulSoup(r, 'html.parser')
+            #print(soup)
+            #temp = soup.find_all('div')
+            #print(temp)
+            url = 'sjdbfasdbfiub'
+            return(url)
         except:
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
-        pass
+        print('In episode({}, {}, {}, {}, {}, {}, {}, {})'.format(self,
+                                                                  url,
+                                                                  imdb,
+                                                                  tvdb,
+                                                                  title,
+                                                                  premiered,
+                                                                  season,
+                                                                  episode))
+        print(url)
 
     def sources(self, url, hostDict, hostprDict):
-        pass
+        print('In sources({}, {}, {}, {})'.format(self,
+                                                  url,
+                                                  hostDict,
+                                                  hostprDict))
 
     def resolve(self, url):
-        pass
+        print('In resolve({}, {})'.format(self, url))
+        try:
+            result = client.request(url)
+            result = result.decode('iso-8859-1').encode('utf-8')
 
+            url = BeautifulSoup(result, 'htlm.parser')
 
-# def get_genres(url):
+            return url
+        except:
+            return
+
 #         genres = {'action' : 'Action', 'adventure' : 'Adventure', 'cars' : 'Cars',
 #                   'comedy' : 'Comedy', 'dementia' : 'Dementia', 'demons' : 'Demons',
 #                   'drama' : 'Drama', 'ecchi' : 'Ecchi', 'fantasy' : 'Fantasy',
@@ -99,38 +122,6 @@ class source:
 # def get_anime_list(url):
 #     print(url)
 #     metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')
-#     html = open_url(url)
-#     soup = BeautifulSoup(html, 'html.parser')
-#     temp = soup.find_all('div')
-#     show = []
-#     for i in temp:
-#         try:
-#             if 'item' in i.attrs['class']:
-#                 title = i.a.img.get('alt').replace(' (Dub)', '').replace(':', '')
-#                 info = metadata.get_meta('tvshow', name=title, imdb_id='')
-#                 show.append({'name' : i.a.img.get('alt'),
-#                              'url' : 'get_episodes&url={}&title={}'.format(i.a.get('href'), info['title']),
-#                              'image' : info['cover_url'],
-#                              'fanart' : info['backdrop_url'],
-#                              'banner' : info['banner_url'],
-#                              'desc' : info['plot']})
-#         except:
-#             print('Caught exception: {}'.format(sys.exc_info()[0]))
-
-#     temp = soup.find_all('a')
-#     for i in temp:
-#         try:
-#             if 'btn' in i.attrs['class']:
-#                 if 'Next' in i.get_text():
-#                     show.append({'name' : 'Next',
-#                                  'url' : 'next_page&url={}'.format(urllib.quote_plus(_domain_url+i.attrs.get('href'))),
-#                                  'image' : '',
-#                                  'fanart' : '',
-#                                  'desc' : ''})
-#         except:
-#             print('Caught exception: {}'.format(sys.exc_info()[0]))
-#     print(show)
-#     addDirectory(show, 'tvshows')
 
 # def get_episodes(url, title):
 #     metadata = metahandlers.MetaData(preparezip=False, tmdb_api_key='6cd18c483332380fd24ae41316af596f')

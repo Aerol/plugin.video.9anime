@@ -68,12 +68,15 @@ class source:
             url = re.findall('(?://.+?|)(/.+)', r)[0]
             url = client.replaceHTMLCodes(url)
             url = url.encode('utf-8')
+            print(url)
             return url
         except:
             return
 
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
+        print('In gogoanime - episode()')
+        print(url)
         try:
             if url == None: return
 
@@ -82,12 +85,15 @@ class source:
 
             url = [i for i in url.strip('/').split('/')][-1]
             url = self.episode_link % (url, num)
+            print(url)
             return url
         except:
             return
 
 
     def sources(self, url, hostDict, hostprDict):
+        print('in gogoanime - sources()')
+        print(url)
         try:
             sources = []
 

@@ -64,10 +64,11 @@ class source:
             r = [(i[0], re.sub('<.+?>|</.+?>','', i[1])) for i in r]
             r = [i for i in r if t == cleantitle.get(i[1])]
             r = r[-1][0]
-
+            print(r)
             url = re.findall('(?://.+?|)(/.+)', r)[0]
             url = client.replaceHTMLCodes(url)
             url = url.encode('utf-8')
+            print(url)
             return url
         except:
             return
@@ -100,6 +101,8 @@ class source:
 
 
     def sources(self, url, hostDict, hostprDict):
+        print("In animeultima - sources()")
+        print(url)
         try:
             sources = []
 

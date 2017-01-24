@@ -7,6 +7,7 @@
 		<import addon="script.exodus.metadata" version="1.0.0" />
 		<import addon="script.module.urlresolver" version="3.0.0" />
 		<import addon="script.module.metahandler" version="1.0.0" />
+		<import addon="script.module.beautifulsoup4" version="4.3.2" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="exodus.py">
 		<provides>video</provides>
